@@ -19,8 +19,15 @@ struct ContentView: View {
             NavigationStack {
                 List(viewModel.filteredEmployees) {employee in
                         VStack(alignment: .leading){
-                            Text(employee.name)
-                            Text(employee.position)
+                            NavigationLink(
+                                destination: DetailView(employee: employee)) {
+                                    VStack {
+                                        Text(employee.name)
+                                        Text(employee.position)
+                                    }
+                                }
+                            //Text(employee.name)
+                            //Text(employee.position)
                         }
                     }
                 
