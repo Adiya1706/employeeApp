@@ -1,10 +1,10 @@
 import SwiftUI
 
 class EmployeesViewModel: ObservableObject {
-    @Published var employees: [Employee] = []   // пустой массив для JSON
+    @Published var employees: [Employee] = []  
     
     init() {
-        fetchEmployees()   // вызываем функцию
+        fetchEmployees()
     }
     
     func fetchEmployees() {
@@ -29,6 +29,6 @@ class EmployeesViewModel: ObservableObject {
             } else if let error = error {
                 print("Network error:", error)
             }
-        }.resume()  // важно вызвать resume
+        }.resume() //
     }
 }
