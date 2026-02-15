@@ -1,0 +1,12 @@
+{
+  "data" : [
+    {
+      "filename" : "employees_10KB.json",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
