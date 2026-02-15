@@ -1,8 +1,15 @@
 import SwiftUI
 
 class EmployeesViewModel: ObservableObject {
-    @Published var employees: [Employee] = []  
-    
+    @Published var employees: [Employee] = []
+    @Published var searchText = ""
+    var filteredEmployees: [Employee] {
+        if searchText.isEmpty {
+            return employees
+        }
+        return employees
+            .filter {$0.name.localizedCaseInsensitiveContains(searchText)}
+    }
     init() {
         fetchEmployees()
     }

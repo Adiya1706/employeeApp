@@ -17,7 +17,7 @@ struct ContentView: View {
         //ыуаыаыуаыуаыа
         VStack {
             NavigationStack {
-                List(viewModel.employees) {employee in
+                List(viewModel.filteredEmployees) {employee in
                         VStack(alignment: .leading){
                             Text(employee.name)
                             Text(employee.position)
@@ -27,6 +27,7 @@ struct ContentView: View {
                 
     
             }
+            .searchable(text: $viewModel.searchText )
         }
         .padding()
     }
